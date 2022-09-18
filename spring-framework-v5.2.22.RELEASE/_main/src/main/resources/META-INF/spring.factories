@@ -1,0 +1,11 @@
+# spring boot 项目启动的时候会加载 META-INF/spring.factories 里的内容
+# 自定义的工厂类，key 是工厂类型，values 是具体要实现的工厂名称
+# 具体写法参考，spring boot 源码， 如 spring-boot 模块中的 spring.factories 文件
+# --------------------------------------------------------------------------
+# org.springframework.boot.SpringApplicationRunListener=\
+# xxx.aImplimentClass,\
+# xxx.bImplimentClass
+
+
+org.springframework.boot.SpringApplicationRunListener=\
+com.xxx.config.MySpringApplicationListener

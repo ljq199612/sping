@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-parent</artifactId>
+		<version>2.2.5.RELEASE</version>
+		<relativePath>../spring-boot-project/spring-boot-parent/pom.xml</relativePath>
+	</parent>
+
+	<artifactId>00-main</artifactId>
+	<groupId>00main</groupId>
+	<version>2.2.5.RELEASE</version>
+	<modelVersion>4.0.0</modelVersion>
+	<packaging>jar</packaging>
+	<name>nexus</name>
+	<description>nexus 私库上传测试</description>
+	<distributionManagement>
+		<repository>
+			<id>nexus</id>
+			<url>http://localhost:8081/repository/maven-releases</url>
+		</repository>
+
+	</distributionManagement>
+
+	<properties>
+		<maven.compiler.source>8</maven.compiler.source>
+		<maven.compiler.target>8</maven.compiler.target>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-autoconfigure</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+	</dependencies>
+<!-- 私服测试 -->
+	<repositories>
+		<repository>
+			<id>nexus</id>
+			<name>maven-public</name>
+			<url>http://localhost:8081/repository/maven-public/</url>
+		</repository>
+	</repositories>
+<!-- -->
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/java/pro</directory>
+				<includes>
+					<include>**/*.*</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
+
+</project>

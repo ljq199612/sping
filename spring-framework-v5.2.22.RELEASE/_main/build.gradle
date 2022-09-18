@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id "org.springframework.boot" version "2.2.5.RELEASE"
+    id 'io.spring.dependency-management'
+}
+
+group 'org.springframework'
+version '5.2.22.RELEASE'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://maven.aliyun.com/repository/central'}
+    maven{ url 'https://maven.aliyun.com/repository/public'}
+    maven{ url 'https://maven.aliyun.com/repository/public'}
+}
+
+dependencies {
+
+    /**
+     * 经测试 Spirng-boot-start-web 包中包含 spring-boot-starter
+     * --------------------------------------------------------
+     * compile 'org.springframework.boot:spring-boot-starter'
+     * --------------------------------------------------------
+     */
+    compile 'org.springframework.boot:spring-boot-starter-web'
+
+    implementation project(":spring-context")
+    implementation project(":spring-webmvc")
+
+
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
